@@ -3,13 +3,13 @@ import questions from '../questions';
 
 const App = () => {
   const [selectedId, setSelectedId] = useState(null);
-  const flipCard = (id) => setSelectedId(id);
+  const flipCard = (id) => setSelectedId(id !== selectedId ? id : null);
 
   return (
     <div className="flashcards">
       {questions.map((qn) => (
         <article
-          className={selectedId === qn.id && 'selected'}
+          className={selectedId === qn.id ? 'selected' : ''}
           key={qn.id}
           onClick={() => flipCard(qn.id)}
         >
