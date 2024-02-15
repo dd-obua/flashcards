@@ -1,14 +1,16 @@
+import { useState } from 'react';
 import questions from '../questions';
 
-const Card = ({ question }) => {
-  return <article>{question}</article>;
-};
-
 const App = () => {
+  const [selectedId, setSelectedId] = useState(null);
+  const flipCard = (id) => setSelectedId(id);
+
   return (
     <div className="flashcards">
       {questions.map((qn) => (
-        <Card question={qn.question} key={qn.id} />
+        <article key={qn.id} onClick={() => flipCard(qn.id)}>
+          {selectedId === qn.id ? qn.answer : qn.question}
+        </article>
       ))}
     </div>
   );
