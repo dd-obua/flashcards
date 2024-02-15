@@ -6,7 +6,7 @@ const Card = ({ question }) => {
 
 const App = () => {
   return (
-    <div>
+    <div className="flashcards">
       {questions.map((qn) => (
         <Card question={qn.question} key={qn.id} />
       ))}
