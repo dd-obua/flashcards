@@ -16,12 +16,12 @@ const questions = [
   },
   {
     id: 1297,
-    question: 'How to pass data from parent to child components?',
+    question: 'How is data passed from parent to child components?',
     answer: 'Props',
   },
   {
     id: 9103,
-    question: 'How to give components memory?',
+    question: 'How is memory given to components?',
     answer: 'useState hook',
   },
   {

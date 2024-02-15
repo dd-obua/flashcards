@@ -8,7 +8,11 @@ const App = () => {
   return (
     <div className="flashcards">
       {questions.map((qn) => (
-        <article key={qn.id} onClick={() => flipCard(qn.id)}>
+        <article
+          className={selectedId === qn.id && 'selected'}
+          key={qn.id}
+          onClick={() => flipCard(qn.id)}
+        >
           {selectedId === qn.id ? qn.answer : qn.question}
         </article>
       ))}
